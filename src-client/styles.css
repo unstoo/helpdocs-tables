@@ -1,3 +1,10 @@
 body {
+    background: #fefefe;
+}
+
+.ql-editor {
+    margin-top: 20px;
+    max-width: 700px;
+    border: 1px solid silver;
     background: white;
 }
