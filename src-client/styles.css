@@ -2,9 +2,202 @@ body {
     background: #fefefe;
 }
 
-.ql-editor {
-    margin-top: 20px;
-    max-width: 700px;
-    border: 1px solid silver;
-    background: white;
+h2 {
+    color: dodgerblue;
+}
+
+.tables-page {
+    margin: 20px;
+}
+
+.table {
+    font-size: 18px;
+    line-height: 28px;
+    width: 720px;
+    margin: 0 auto;
+}
+
+.table__caption {
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.table__row {
+    min-height: 56px;
+    display: flex;
+}
+
+.table__row:nth-of-type(2n) {
+    background-color: #f9f9f9;
+}
+
+.table__cell {
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0;
+    flex-basis: 40%;
+}
+
+.table__cell::before {
+    content: "";
+    display: inline-block;
+}
+
+.table__cell--heading {
+    flex-basis: 60%;
+    padding: 10px;
+    font-weight: normal;
+}
+.table__cell--one-third {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 42px;
+    font-weight: normal;
+    flex-basis: 33%;
+}
+
+.table__requirement {
+    position: relative;
+}
+
+.table__requirement::before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: -36px;
+    top: 0;
+    background-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22%2314b24b%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M9%2016.17L4.83%2012l-1.42%201.41L9%2019%2021%207l-1.41-1.41z%22%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 740px) {
+    .table {    
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .table__row--last {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .table__cell--one-third {
+        justify-content: center;
+        flex-basis: 100%;
+        flex-grow: 0;
+        display: flex;
+    }
+    
+    .table__requirement {
+
+    }
+}
+
+@media (max-width: 375px) {
+    .tables-page {
+        margin: 10px;
+    }
+
+    .table {
+        width: 100%;
+    }
+    .table__cell--heading {
+        padding-left: 10px;
+    }
+
+    .table__cell::before {
+        content: "";
+        display: inline-block;
+        width: 0;
+    }
+
+    .table__row {
+        min-height: 76px;
+        align-items: center;
+    }
+
+    .table__cell--one-third {
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 62px;
+        flex-basis: 50%;
+        display: flex;
+        flex-shrink: 0;
+    }
+}
+
+
+/* Exchange rates diagram */
+
+.figure {
+    font-family: 'Nunito Sans', -apple-system,BlinkMacSystemFont,“Segoe UI”,Helvetica,Arial,sans-serif,“Apple Color Emoji”,“Segoe UI Emoji”,“Segoe UI Symbol”;
+    line-height: 1.71;
+    color: #333333;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 18px;
+    line-height: 28px;
+    width: 280px;
+    margin: 0 auto;
+
+}
+
+.figure__caption {
+    box-sizing: border-box;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px;
+}
+
+.diagram {
+    display: flex;
+}
+
+.diagram__left-col,
+.diagram__mid-col,
+.diagram__right-col {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    position: relative;
+}
+
+
+.diagram__mid-col {
+}
+
+.diagram__label {
+    padding: 10px;
+}
+
+.diagram__label--mid {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.diagram__mid-col::before {
+    content: "";
+    position: absolute;
+    top: 115px;
+    left: calc(50% - 18px);
+    width: 40px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2248%22%20viewBox%3D%220%200%2040%2048%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23029EE4%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M11.75%2047.751c-.167.166-.417.249-.75.249s-.583-.083-.75-.249a4988.63%204988.63%200%200%200-10-10.943c-.167-.166-.25-.414-.25-.746%200-.331.083-.58.25-.746l10-10.943c.5-.497%201-.497%201.5%200s.5.995%200%201.492l-8.375%209.202H39c.667%200%201%20.332%201%20.995s-.333.995-1%20.995H3.375l8.375%209.202c.5.497.5.995%200%201.492zM28.25.249C28.417.083%2028.667%200%2029%200s.583.083.75.249a4988.63%204988.63%200%200%200%2010%2010.943c.167.166.25.414.25.746%200%20.331-.083.58-.25.746l-10%2010.943c-.5.497-1%20.497-1.5%200s-.5-.995%200-1.492l8.375-9.202H1c-.667%200-1-.332-1-.995s.333-.995%201-.995h35.625L28.25%201.741c-.5-.497-.5-.995%200-1.492z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+}
+
+.diagram__label--right {
+    text-align: left;
+    padding-left: 40px;
 }
