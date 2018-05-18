@@ -11,7 +11,7 @@ const path = require('path');
     devServer: {
       contentBase: './dist',
      hot: true,
-     port: 3300,
+     port: 3001,
      host: '0.0.0.0'
     },
     mode: 'development',
